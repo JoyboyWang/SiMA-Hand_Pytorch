@@ -1,0 +1,34 @@
+{
+    "base": {
+        "exp_name": "pretrained_simahand_dexycb",
+        "model_dir": "experiment/h2onet.dexycb/pretrained_simahand"
+    },
+    "data": {
+        "name": "DEX_YCB",
+        "transforms_type": "h2onet",
+        "eval_type": [
+            "test"
+        ],
+        "input_img_shape": [
+            128,
+            128
+        ],
+        "root_dir": "data/DexYCB"
+    },
+    "model": {
+        "name": "svr_hand",
+        "pretrain": true
+    },
+    "metric": {
+        "major_metric": "score"
+    },
+    "test": {
+        "batch_size": 128,
+        "num_workers": 20
+    },
+    "summary": {
+        "save_summary_steps": 50,
+        "save_latest_freq": 1,
+        "save_best_after": 0
+    }
+}

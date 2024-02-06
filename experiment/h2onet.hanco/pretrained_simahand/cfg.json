@@ -1,0 +1,36 @@
+{
+    "base": {
+        "exp_name": "pretrained_simahand_hanco",
+        "model_dir": "experiment/h2onet.hanco/pretrained_simahand"
+    },
+    "data": {
+        "name": "HanCo",
+        "transforms_type": "h2onet",
+        "eval_type": [
+            "test"
+        ],
+        "input_img_shape": [
+            128,
+            128
+        ],
+        "root_dir": "data/HanCo",
+        "use_has_fit": false,
+        "read_aug": ["rgb", "rgb_merged"]
+    },
+    "model": {
+        "name": "svr_hand",
+        "pretrain": true
+    },  
+    "metric": {
+        "major_metric": "score"
+    },
+    "test": {
+        "batch_size": 64,
+        "num_workers": 20
+    },
+    "summary": {
+        "save_summary_steps": 50,
+        "save_latest_freq": 1,
+        "save_best_after": 0
+    }
+}
